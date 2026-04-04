@@ -1,49 +1,54 @@
 <template>
-  <component
-    :is="tag"
-    :class="['a-label', typeClass]"
-    :style="computedStyle"
-  >
+  <component :is="tag" :class="['a-label', typeClass]" :style="computedStyle">
     <slot />
   </component>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { PropType } from 'vue'
+import { computed } from "vue";
+import type { PropType } from "vue";
 
 const props = defineProps({
   type: {
-    type: String as PropType<'title-label'|'header-label'|'section-label'|'input-label'|'paragraph'|'another'>,
-    default: 'paragraph',
+    type: String as PropType<
+      | "title-label"
+      | "header-label"
+      | "section-label"
+      | "input-label"
+      | "paragraph"
+      | "another"
+    >,
+    default: "paragraph",
   },
   margin: {
     type: String,
-    default: '0',
+    default: "0",
   },
-})
+});
 
 const tag = computed(() => {
-  if (props.type === 'title-label' || props.type === 'header-label') return 'h1'
-  if (props.type === 'section-label') return 'h2'
-  if (props.type === 'input-label') return 'label'
-  if (props.type === 'paragraph') return 'p'
-  if (props.type === 'another') return 'span'
-  return 'span'
-})
+  if (props.type === "title-label" || props.type === "header-label")
+    return "h1";
+  if (props.type === "section-label") return "h2";
+  if (props.type === "input-label") return "label";
+  if (props.type === "paragraph") return "p";
+  if (props.type === "another") return "span";
+  return "span";
+});
 
 const typeClass = computed(() => {
-  if (props.type === 'title-label' || props.type === 'header-label') return 'title-label'
-  if (props.type === 'section-label') return 'section-label'
-  if (props.type === 'input-label') return 'input-label'
-  if (props.type === 'paragraph') return 'paragraph'
-  if (props.type === 'another') return 'another'
-  return ''
-})
+  if (props.type === "title-label" || props.type === "header-label")
+    return "title-label";
+  if (props.type === "section-label") return "section-label";
+  if (props.type === "input-label") return "input-label";
+  if (props.type === "paragraph") return "paragraph";
+  if (props.type === "another") return "another";
+  return "";
+});
 
 const computedStyle = computed(() => ({
   margin: props.margin,
-}))
+}));
 </script>
 
 <style scoped>
@@ -67,8 +72,8 @@ const computedStyle = computed(() => ({
 
 .input-label {
   font-size: 0.9rem;
-  font-weight: 500;
-  color: #333;
+  font-weight: 280;
+  color: #cfcfcf;
 }
 
 .paragraph {

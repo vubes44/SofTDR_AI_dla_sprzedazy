@@ -33,13 +33,13 @@ defineEmits<{
 <style scoped>
 .a-input {
   padding: 10px 14px;
-  font-size: 16px;
+  font-size: 13px;
   font-family: inherit;
   border: 2px solid #e0e0e0;
   border-radius: 6px;
   transition: all 0.3s ease;
   outline: none;
-  width: 100%;
+  width: 300px;
   box-sizing: border-box;
   background-color: #fff;
   color: #333;
@@ -69,7 +69,6 @@ defineEmits<{
 /* Password input specific styles */
 .a-input--password {
   letter-spacing: 0.15em;
-  font-family: "Courier New", Courier, monospace;
 }
 
 .a-input--password::placeholder {
